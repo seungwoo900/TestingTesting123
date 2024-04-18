@@ -41,4 +41,18 @@ class UniqueCollectionTest {
 
         assert(originalSize == 2 && newSize == 0) {"Items not cleared"}
     }
+
+    @Test
+    fun testGet() {
+        val item1 = Item("A")
+        val item2 = Item("B")
+
+        collection.addItem(item1)
+        collection.addItem(item2)
+
+        assertEquals(item1, collection.get(0))
+        assertEquals(item2, collection.get(1))
+    }
+
+
 }
