@@ -62,11 +62,13 @@ class UniqueCollectionTest {
         collection.addItem(item1)
         collection.addItem(item2)
 
-        assertEquals(2, collection.size())
+        val oldSize = collection.size()
 
         collection.remove(item1)
 
-        assertEquals(1, collection.size())
+        val newSize = collection.size()
+
+        assert(1 == newSize && 2 == oldSize)
         assertEquals(item2, collection.get(0))
     }
 }
