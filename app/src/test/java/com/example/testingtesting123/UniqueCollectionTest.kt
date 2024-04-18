@@ -54,5 +54,19 @@ class UniqueCollectionTest {
         assertEquals(item2, collection.get(1))
     }
 
+    @Test
+    fun testRemove() {
+        val item1 = Item("A")
+        val item2 = Item("B")
 
+        collection.addItem(item1)
+        collection.addItem(item2)
+
+        assertEquals(2, collection.size())
+
+        collection.remove(item1)
+
+        assertEquals(1, collection.size())
+        assertEquals(item2, collection.get(0))
+    }
 }
